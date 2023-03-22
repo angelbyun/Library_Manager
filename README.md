@@ -16,7 +16,7 @@ Table -> books
 - fiction:boolean
 - number_of_copies:integer
 
-User Story 1 - Library Index:
+User Story 1 - Library Index: #shows ALL records of one model
 As a visitor
 When I visit '/libraries'
 Then I see the name of each library
@@ -35,21 +35,31 @@ EXAMPLE:
   Fiction: True
   Number of Copies: 2
 
-User Story 3, Library Inventory:
+User Story 3, Library Show:
 As a visitor
 When I visit '/libraries/:id'
-Then I see all the attributes of that library and each books name, if it is available, and number of copies associated at that library.
+Then I see all the attributes of that library and each books name and if it is available at that library.
 EXAMPLE:
 Denver Public Library 
   City: Denver
   Opening Time: 10:00
   Closing Time: 18:00
-  Books:  Harry Potter and the Sorcerer's Stone, True, 2
-          Verity, False, 0
-          The Alchemist, True, 1
-          Milk and Honey, False, 0
+  Books:  Harry Potter and the Sorcerer's Stone, True
+          Verity, False
+          The Alchemist, True
+          Milk and Honey, False
 
-User Story 4, Zoo Animals Index:
+User Story 4, Book Show:
+As a visitor
+When I visit '/books/:id'
+Then I see the book with that id including the book's attributes.
+EXAMPLE:
+Title: Harry Potter and the Sorcerer's Stone
+Author: JK Rowling
+Fiction: True
+Number of Copies: 2
+
+User Story 5, Library Books Index:
 As a visitor
 When I visit '/libraries/:library_id/books'
 Then I see a total count of all books that are associated with that library.
