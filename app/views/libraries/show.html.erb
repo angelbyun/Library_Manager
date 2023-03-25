@@ -3,3 +3,5 @@
 <p>Opening Time: <%= @library.opening_time %></p>
 <p>Closing Time: <%= @library.closing_time %></p>
 <p>Book Available: <%= @library.book_available %></p>
+
+<%= link_to "Books at this Library", "/libraries/#{@library.id}/books" %>
