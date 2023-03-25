@@ -79,3 +79,18 @@ User Story 7, Library Book Count
 As a visitor
 When I visit a Library's show page
 I see a count of the number of book associated with this library
+
+User Story 8, Child Index Link
+As a visitor
+When I visit any page on the site
+Then I see a link at the top of the page that takes me to the Book Index
+
+User Story 9, Library Index Link
+As a visitor
+When I visit any page on the site
+Then I see a link at the top of the page that takes me to the Library Index
+
+User Story 10, Library Book Index Link
+As a visitor
+When I visit a library show page ('/libraries/:id')
+THen I see a link to take me tot hat library's 'book' page ('/libraries/:id/books')
