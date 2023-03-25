@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index
-    @libraries = Library.all
+    @libraries = Library.most_recent_created_at
   end
 
   def show
