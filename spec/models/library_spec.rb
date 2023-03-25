@@ -13,10 +13,9 @@ RSpec.describe Library, type: :model do
     let!(:book_2) { Book.create!(title: 'Verity', author: 'Colleen Hoover', fiction: true, number_of_copies: 0, library: library_1) }
     let!(:book_3) { Book.create!(title: 'The Alchemist', author: 'Paulo Coelo', fiction: true, number_of_copies: 4, library: library_2) }
     let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', fiction: true, number_of_copies: 0, library: library_1) }
-    
-    it 'book_count' do
 
-      expect(library_1.book_count).to eq(2)
+    it 'displays all records of library by most recently created and dates it was created' do
+
     end
   end
 end

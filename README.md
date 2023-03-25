@@ -66,3 +66,16 @@ Then I see each Book that is associated with that Library with each Book's attri
 EXAMPLE:
  Total Books at Denver Public Library: 2
  Total Books at Douglas County Library: 2
+
+User Story 6, Library Index sorted by Most Recently Created 
+
+As a visitor
+When I visit the library index,
+I see that records are ordered by most recently created first
+And next to each of the records I see when it was created
+
+User Story 7, Library Book Count
+
+As a visitor
+When I visit a Library's show page
+I see a count of the number of book associated with this library

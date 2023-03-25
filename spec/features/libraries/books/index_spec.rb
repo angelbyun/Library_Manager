@@ -21,5 +21,6 @@ RSpec.describe '/libraries/:library_id/books', type: :feature do
       visit "/libraries/#{library_1.id}/books"
 
       expect(page).to have_content("Total Books at Denver Public Library: 2")
+    end
   end
 end
