@@ -1,0 +1,11 @@
+<%= form_with method: :post, local: true do |form| %>
+<%= form.label :title %>
+<%= form.text_field :title %>
+<%= form.label :author %>
+<%= form.text_field :author %>
+<%= form.label :fiction %>
+<%= form.text_field :fiction %>
+<%= form.label :number_of_copies %>
+<%= form.text_field :number_of_copies %>
+<%= form.submit "Create Book" %>
+<% end %>

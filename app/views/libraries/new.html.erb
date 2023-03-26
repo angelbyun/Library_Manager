@@ -1,0 +1,14 @@
+<%= form_with url: '/libraries', method: :post, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :city %>
+<%= form.text_field :city %>
+<%= form.label :opening_time %>
+<%= form.text_field :opening_time %>
+<%= form.label :closing_time %>
+<%= form.text_field :closing_time %>
+<%= form.label :book_available %>
+<%= form.text_field :book_available %>
+
+<%= form.submit "Create Library" %>
+<% end %>

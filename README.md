@@ -94,3 +94,49 @@ User Story 10, Library Book Index Link
 As a visitor
 When I visit a library show page ('/libraries/:id')
 THen I see a link to take me tot hat library's 'book' page ('/libraries/:id/books')
+
+User Story 11, Library Creation
+As a visitor
+When I visit the Library Index page
+Then I see a link to create a new Library record, "New Library"
+When I click this link
+Then I am taken to '/libraries/new' where I see a form for a new library record
+When I fill out the form with a new library's attributes:
+And I click the button "Create Library" to submit the form
+Then a `POST` request is sent to the '/libraries' route,
+a new library record is created,
+and I am redirected to the Library Index page where I see the new Library displayed
+
+User Story 12, Library Update
+As a visitor,
+When I visit a library show page
+Then I see a link to update the library "Update Library"
+When I click the link "Update Library"
+Then I am taken to '/parents/:id/edit' where I see a form to edit the library's attributes:
+When I click the button to submit the form
+Then a `PATCH` request is sent to '/libraries/:id',
+the library's info is update,
+and I am redirected to the Library's Show page where I see the library's updated info
+
+User Story 13, Library Book Creation
+As a visitor
+When I visit a Library Book Index page
+THen I see a link to add a new adoptable book for that library "Create Book"
+When I click the link
+I am taken '/libraries/:library_id/books/new' where I see a form to add a new adoptable book
+When I fill in the form with the book's attributes:
+And I click the button "Create Book"
+Then a `POST` request is sent to '/libraries/:library_id/books',
+a new book object/row is created for that library,
+and I am redirected to the Library Book Index page where I can see the new book listed
+
+User Story 14, Book Update
+As a visitor,
+When I visit a Book show page
+THen I see a link to update that Book "Update Book"
+When I click the link
+I am taken to '/books/:id/edit' where I see a form to edit the child's attributes:
+When I click the button to submit the form "Update Book"
+Then a `PATCH` request is sent to '/books/:id',
+the book's data is updated,
+and I am redirected to the Book Show page where I see the Book's updated information

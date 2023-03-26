@@ -1,1 +1,2 @@
-<p>Total Books at Denver Public Library: <%= @library.book_count %> </p>
+<p>Total Books at Denver Public Library: <%= @library.book_count %> 
+<%= link_to "New Book", "/libraries/#{@library.id}/books/new" %></p>
