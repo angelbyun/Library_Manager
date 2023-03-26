@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem 'orderly'
   gem 'shoulda-matchers'
+  gem 'net-http'
 end
 
 group :development do
