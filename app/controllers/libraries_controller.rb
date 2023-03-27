@@ -22,11 +22,12 @@ class LibrariesController < ApplicationController
   def update
     @library = Library.find(params[:id])
     @library.update(library_params)
+    @library.save
     redirect_to '/libraries'
   end
 
 private
   def library_params
-    params.permit(:name)
+    params.permit(:name, :city, :opening_time, :closing_time, :book_available)
   end
 end
