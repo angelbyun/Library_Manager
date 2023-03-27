@@ -15,6 +15,17 @@ class LibrariesController < ApplicationController
     redirect_to "/libraries"
   end
 
+  def edit
+    @library = Library.find(params[:id])
+  end
+
+  def update
+    @library = Library.find(params[:id])
+    @library.update(library_params)
+    redirect_to '/libraries'
+  end
+
+private
   def library_params
     params.permit(:name)
   end

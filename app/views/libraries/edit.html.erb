@@ -1,0 +1,5 @@
+<%= form_with url: "/libraries/#{@library.id}", method: :patch, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.submit "Update Library" %>
+<% end %>
