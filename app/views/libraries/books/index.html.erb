@@ -3,4 +3,4 @@
 <% @books.each do |book| %>
 <p><%= book.title %></p>
 <% end %>
-<%= link_to "New Book", "/libraries/#{@library.id}/books/new" %></p>
+<%= button_to "New Book", "/libraries/#{@library.id}/books/new", method: :get %></p>

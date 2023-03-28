@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/libraries/:library_id/books', type: :feature do
-  # User Story 5, Library Books Index:
-  # As a visitor
-  # When I visit '/libraries/:library_id/books'
-  # Then I see each Book that is associated with that Library with each Book's attributes
-  # EXAMPLE:
-  # Total Books at Denver Public Library: 2
-  # Total Books at Douglas County Library: 2
   describe 'as a visitor, when I visit the library books index page' do
     let!(:library_1) { Library.create!(name: 'Denver Public Library', city: 'Denver', opening_time: 10, closing_time: 18, book_available: false) }
     let!(:library_2) { Library.create!(name: 'Douglas County Library', city: 'Highlands Ranch', opening_time: 8, closing_time: 20, book_available: true) }

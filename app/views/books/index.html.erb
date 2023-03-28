@@ -5,6 +5,6 @@
   <p>Author: <%= book.author %></p>
   <p>Fiction: <%= book.fiction %></p>
   <p>Number of Copies: <%= book.number_of_copies %></p>
-  <p><%= link_to "Edit #{book.title}", "/books/#{book.id}/edit" %></p>
+  <p><%= button_to "Edit #{book.title}", "/books/#{book.id}/edit", method: :get %></p>
   <p><%= button_to "Delete #{book.title}", "/books/#{book.id}", method: :delete %></p>
   <% end %>

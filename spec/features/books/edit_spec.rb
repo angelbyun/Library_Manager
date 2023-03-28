@@ -9,15 +9,15 @@ let!(:book_2) { Book.create!(title: 'Verity', author: 'Colleen Hoover', fiction:
 let!(:book_3) { Book.create!(title: 'The Alchemist', author: 'Paulo Coelo', fiction: true, number_of_copies: 4, library: library_2) }
 let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', fiction: true, number_of_copies: 0, library: library_1) }
 
-  it 'links to edit page' do
+  it 'links to edit book show page' do
     visit "/books/#{book_1.id}"
 
-    click_link("Edit #{book_1.title}")
+    click_button("Edit Book")
 
     expect(current_path).to eq("/books/#{book_1.id}/edit")
   end
 
-  it 'can edit the library' do
+  it 'can edit the book show page' do
     visit "/books/#{book_1.id}/edit"
 
     fill_in 'Title', with: 'Harry Potter and the Sorcerers Stone'
@@ -27,19 +27,19 @@ let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', ficti
     expect(page).to have_content('Harry Potter and the Sorcerers Stone')
   end
 
-  it 'links to edit page' do
+  it 'links to edit book index page' do
     visit "/books"
 
-    click_link("Edit #{book_1.title}")
+    click_button("Edit #{book_1.title}")
 
     expect(current_path).to eq("/books/#{book_1.id}/edit")
   end
 
-  it 'can edit the library' do
+  it 'can edit the book index page' do
     visit "/books/#{book_1.id}/edit"
 
     fill_in 'Title', with: 'Harry Potter and the Sorcerers Stone'
-    click_button('Update Book')
+    click_button("Update Book")
 
     expect(current_path).to eq("/books/#{book_1.id}")
     expect(page).to have_content('Harry Potter and the Sorcerers Stone')

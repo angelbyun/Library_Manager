@@ -10,7 +10,7 @@ class Library < ApplicationRecord
     self.books.count
   end
 
-  def sort_by_name(sort)
+  def sort_by_title(sort)
     if sort == "alpha"
       self.books.order(title: :asc)
     else
