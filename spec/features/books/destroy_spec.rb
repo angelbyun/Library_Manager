@@ -17,4 +17,13 @@ RSpec.describe 'destroy a book' do
     expect(current_path).to eq("/books")
     expect(page).to_not have_content(book_1.title)
   end
+
+  it 'can delete the book from index page' do
+    visit "/books"
+
+    click_button("Delete #{book_1.title}")
+
+    expect(current_path).to eq("/books")
+    expect(page).to_not have_content(book_1.title)
+  end
 end

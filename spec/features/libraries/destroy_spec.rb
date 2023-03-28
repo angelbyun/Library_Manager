@@ -17,4 +17,13 @@ RSpec.describe 'destroy a library' do
     expect(current_path).to eq("/libraries")
     expect(page).to_not have_content(library_1.name)
   end
+
+  it 'can delete the library from index page' do
+    visit "/libraries"
+
+    click_button("Delete #{library_1.name}")
+
+    expect(current_path).to eq("/libraries")
+    expect(page).to_not have_content(library_1.name)
+  end
 end
