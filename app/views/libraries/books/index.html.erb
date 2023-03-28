@@ -1,2 +1,6 @@
-<p>Total Books at Denver Public Library: <%= @library.book_count %> 
+<p>Total Books at Denver Public Library: <%= @library.book_count %></p>
+<p><%= link_to "Sort Alphabetically", "/libraries/#{@library.id}/books?sort=alpha"%>
+<% @books.each do |book| %>
+<p><%= book.title %></p>
+<% end %>
 <%= link_to "New Book", "/libraries/#{@library.id}/books/new" %></p>
