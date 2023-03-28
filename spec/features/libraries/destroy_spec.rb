@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the books show page' do
+RSpec.describe 'destroy a library' do
   let!(:library_1) { Library.create!(name: 'Denver Public Library', city: 'Denver', opening_time: 10, closing_time: 18, book_available: false) }
   let!(:library_2) { Library.create!(name: 'Douglas County Library', city: 'Highlands Ranch', opening_time: 8, closing_time: 20, book_available: true) }
 
@@ -9,10 +9,12 @@ RSpec.describe 'the books show page' do
   let!(:book_3) { Book.create!(title: 'The Alchemist', author: 'Paulo Coelo', fiction: true, number_of_copies: 4, library: library_2) }
   let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', fiction: true, number_of_copies: 0, library: library_1) }
 
-  it 'displays the book title' do
-    visit "/books/#{book_1.id}"
+  it 'can delete the library from show page' do
+    visit "/libraries/#{library_1.id}"
 
-    expect(page).to have_content(book_1.title)
-    expect(page).to_not have_content(book_2.title)
+    click_button("Delete Library")
+
+    expect(current_path).to eq("/libraries")
+    expect(page).to_not have_content(library_1.name)
   end
 end

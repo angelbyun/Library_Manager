@@ -159,3 +159,46 @@ Next to every library, I see a link to edit that library's info
 WHen I click the link
 I should be taken to that library's edit page where I can update its informmation just like in user story 12
 
+User Story 18, Book Update from Books Index Page
+As a visitor
+When I visit the 'book' index page or a library 'book' index page when I click the link
+I should be taken to that 'book' edit page where I can update its informatio njust like in User Story 14
+
+User Story 19, Library Delete
+As a visitor
+When I visit a library show page
+Then I see a link to delete the library
+When I click the link "Delete Library"
+Then a 'DELETE' request is sent to the '/libraries/:id',
+the library is deleted, and all book records are deleted
+and I am redirected to the library index page where I no longer see this library
+
+User Story 20, Book Delete
+As a visitor
+When I visit a book show page
+Then I see a link to delete the book "Delete Book"
+When I click the lik
+THen a 'DELETE' request is sent to '/books/:id'
+the book is deleted,
+and I am redirected to the book index page where I no longer see this book
+
+User Story 21, Display Records Over a Given Threshold
+As a visitor,
+When I visit the Library's book Index Page
+I see a form that allows me to input a number value
+When I input a number value and click the submit button that reads 'Only return records with more than 'number' of 'column_name''
+Then I am brought back to the current index page with only the records that meet that threshold shown
+
+User Story 22, Library Delete from Library Index Page
+As a visitor
+When I visit the library index page
+Next to every library, I see a link to delete that library
+When I click the link
+I am returned to the Library Index Page where I no longer see that library
+
+User Story 23, Book Delete from Books Index Page
+As a visitor
+When I visit the 'book' index page or a 'library' book index page
+Next to every book, I see a link to delete that book
+When I click the link
+I should be taken to the 'book' index page where I no longer see that book

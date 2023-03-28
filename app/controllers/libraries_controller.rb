@@ -26,6 +26,13 @@ class LibrariesController < ApplicationController
     redirect_to "/libraries/#{@library.id}"
   end
 
+  def destroy
+    library = Library.find(params[:id])
+    library.books.destroy_all
+    library.destroy
+    redirect_to "/libraries"
+  end
+
 private
   def library_params
     params.permit(:name, :city, :opening_time, :closing_time, :book_available)
