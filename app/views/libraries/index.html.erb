@@ -3,6 +3,7 @@
 <% @libraries.each do |library| %>
   <p><%= library.name %></p>
   <small>Created: <%= library.created_at %></small>
+  <p><%= link_to "Edit #{library.name}", "/libraries/#{library.id}/edit" %></p>
   <% end %>
 
   

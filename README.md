@@ -151,3 +151,11 @@ As a visitor
 When I visit the Library's book Index Page
 Then I see a link
 I'm taken back to the Parent's book Index Page where I see all of the library's children in alphabetical order
+
+User Story 17, Library Update from Library Index Page
+As a visitor
+When I visit the library index page
+Next to every library, I see a link to edit that library's info
+WHen I click the link
+I should be taken to that library's edit page where I can update its informmation just like in user story 12
+
