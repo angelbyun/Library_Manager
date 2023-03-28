@@ -1,10 +1,10 @@
 <h1>Library Index Page</h1>
-<p><%= link_to "New Library", "/libraries/new" %></p>
 <% @libraries.each do |library| %>
   <p><%= library.name %></p>
   <small>Created: <%= library.created_at %></small>
   <p><%= button_to "Edit #{library.name}", "/libraries/#{library.id}/edit", method: :get %></p>
   <p><%= button_to "Delete #{library.name}", "/libraries/#{library.id}", method: :delete %></p>
   <% end %>
+  <p><%= button_to "New Library", "/libraries/new", method: :get %></p>
 
   

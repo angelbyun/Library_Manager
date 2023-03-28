@@ -1,18 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'the books show page' do
-# User Story 2, Library Show:
-# As a visitor
-# When I visit '/library/:id'
-# Then I see the library with that id including the library's attributes
-# (data from each column that is on the library table)
-# EXAMPLE:
-# Denver Public Library 
-# City: Denver
-# Opening Time:   10:00
-# Closing Time:   18:00
-# Book Available: False
-
 let!(:library_1) { Library.create!(name: 'Denver Public Library', city: 'Denver', opening_time: 10, closing_time: 18, book_available: false) }
 let!(:library_2) { Library.create!(name: 'Douglas County Library', city: 'Highlands Ranch', opening_time: 8, closing_time: 20, book_available: true) }
 
@@ -29,11 +17,6 @@ let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', ficti
   end
 
   it 'book_count' do
-    # User Story 7, Library Book Count
-
-    # As a visitor
-    # When I visit a Library's show page
-    # I see a count of the number of book associated with this library
     visit "/libraries/#{library_1.id}"
     
     expect(library_1.book_count).to eq(2)
