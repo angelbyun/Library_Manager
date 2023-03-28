@@ -35,4 +35,22 @@ let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', ficti
     expect(current_path).to eq("/libraries/#{library_1.id}")
     expect(page).to have_content('Denver Public Library')    
   end
+
+  it 'links to edit page' do
+    visit "/libraries"
+
+    click_link("Edit #{library_1.name}")
+
+    expect(current_path).to eq("/libraries/#{library_1.id}/edit")
+  end
+
+  it 'can edit the library' do
+    visit "/libraries/#{library_1.id}/edit"
+
+    fill_in 'Name', with: 'Denver Public Library'
+    click_button('Update Library')
+
+    expect(current_path).to eq("/libraries/#{library_1.id}")
+    expect(page).to have_content('Denver Public Library')    
+  end
 end
