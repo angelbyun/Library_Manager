@@ -18,7 +18,7 @@ RSpec.describe Library, type: :model do
       expect(Library.most_recent_created_at).to eq([library_1, library_2])
     end
 
-    it 'book_count' do
+    it '::book_count' do
       expect(library_1.book_count).to eq(2)
     end
   end

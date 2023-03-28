@@ -14,7 +14,7 @@ RSpec.describe Book, type: :model do
     let!(:book_3) { Book.create!(title: 'The Alchemist', author: 'Paulo Coelo', fiction: true, number_of_copies: 4, library: library_2) }
     let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', fiction: true, number_of_copies: 0, library: library_1) }
     
-    it 'shows 4 books that are fiction' do
+    it '::fiction' do
       expect(Book.fiction).to eq([book_1, book_2, book_3, book_4])
     end
   end
