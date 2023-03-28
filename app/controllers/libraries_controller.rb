@@ -23,7 +23,7 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
     @library.update(library_params)
     @library.save
-    redirect_to '/libraries'
+    redirect_to "/libraries/#{@library.id}"
   end
 
 private

@@ -19,26 +19,20 @@ let!(:book_2) { Book.create!(title: 'Verity', author: 'Colleen Hoover', fiction:
 let!(:book_3) { Book.create!(title: 'The Alchemist', author: 'Paulo Coelo', fiction: true, number_of_copies: 4, library: library_2) }
 let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', fiction: true, number_of_copies: 0, library: library_1) }
   it 'links to edit page' do
-    library_3 = Library.create!(name: 'Columbine Library')
-    visit 'libraries'
+    visit "/libraries/#{library_1.id}"
 
-    click_on("Edit #{library_3.name}")
+    click_link("Edit #{library_1.name}")
 
-    expect(current_path).to eq("/libraries/#{library_3.id}/edit")
+    expect(current_path).to eq("/libraries/#{library_1.id}/edit")
   end
 
   it 'can edit the library' do
-    library_3 = Library.create!(name: 'Columbin Lib')
+    visit "/libraries/#{library_1.id}/edit"
 
-    visit "/libraries"
+    fill_in 'Name', with: 'Denver Public Library'
+    click_button('Update Library')
 
-    expect(page).to have_content('Columbin Lib')
-
-    click_on("Edit #{library_3.name}")
-    fill_in 'Name', with: 'Columbine Library'
-    click_on("Update Library")
-
-    expect(current_path).to eq("/libraries")
-    expect(page).to have_content('Columbine Library')    
+    expect(current_path).to eq("/libraries/#{library_1.id}")
+    expect(page).to have_content('Denver Public Library')    
   end
 end

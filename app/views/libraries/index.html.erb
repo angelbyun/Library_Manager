@@ -2,7 +2,6 @@
 <%= link_to "New Library", "/libraries/new" %></p>
 <% @libraries.each do |library| %>
   <p><%= library.name %>
-  <%= button_to "Edit #{library.name}", "/libraries/#{library.id}/edit", method: :get %>
   <small>Created: <%= library.created_at %></small>
   <% end %>
 
