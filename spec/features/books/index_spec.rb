@@ -1,16 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/books', type: :feature do
-  # User Story 3, Book Index:
-  # As a visitor
-  # When I visit '/books'
-  # Then I see each Book in the system including the Book's attributes
-  # (data from each column that is on the book table)
-  # EXAMPLE: 
-  # Title: Harry Potter and the Sorcerer's Stone
-  # Author: J.K. Rowling
-  # Fiction: True
-  # Number of Copies: 2
   describe 'as a visitor, when I visit the books index page' do
     let!(:library_1) { Library.create!(name: 'Denver Public Library', city: 'Denver', opening_time: 10, closing_time: 18, book_available: false) }
     let!(:library_2) { Library.create!(name: 'Douglas County Library', city: 'Highlands Ranch', opening_time: 8, closing_time: 20, book_available: true) }

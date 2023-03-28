@@ -4,5 +4,6 @@
 <p>Closing Time: <%= @library.closing_time %></p>
 <p>Book Available: <%= @library.book_available %></p>
 
-<%= link_to "Books at this Library", "/libraries/#{@library.id}/books" %>
-<%= link_to "Edit #{@library.name}", "/libraries/#{@library.id}/edit" %>
+<p><%= link_to "Books at this Library", "/libraries/#{@library.id}/books" %></p>
+<p><%= link_to "Edit #{@library.name}", "/libraries/#{@library.id}/edit" %></p>
+<p><%= button_to "Delete Library", "/libraries/#{@library.id}", method: :delete %>
