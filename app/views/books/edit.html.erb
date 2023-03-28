@@ -1,0 +1,11 @@
+<%= form_with method: :patch, local: true do |form| %>
+<%= form.label :title %>
+<%= form.text_field :title, value: @book.title %>
+<%= form.label :author %>
+<%= form.text_field :author, value: @book.author %>
+<%= form.label :fiction %>
+<%= form.text_field :fiction, value: @book.fiction %>
+<%= form.label :number_of_copies %>
+<%= form.text_field :number_of_copies, value: @book.number_of_copies %>
+<p><%= form.submit 'Update Book' %></p>
+<% end %>
