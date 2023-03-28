@@ -140,3 +140,14 @@ When I click the button to submit the form "Update Book"
 Then a `PATCH` request is sent to '/books/:id',
 the book's data is updated,
 and I am redirected to the Book Show page where I see the Book's updated information
+
+User Story 15, Book Index only shows 'true' Records
+As a visitor
+When I visit the book index
+Then I only see records where the boolean colum is 'true'
+
+User Story 16, Sort Library's Book in Alpheabetical Order by name
+As a visitor
+When I visit the Library's book Index Page
+Then I see a link
+I'm taken back to the Parent's book Index Page where I see all of the library's children in alphabetical order
