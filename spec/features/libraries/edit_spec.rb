@@ -18,15 +18,15 @@ let!(:book_1) { Book.create!(title: 'Harry Potter and the Sorcerers Stone', auth
 let!(:book_2) { Book.create!(title: 'Verity', author: 'Colleen Hoover', fiction: true, number_of_copies: 0, library: library_1) }
 let!(:book_3) { Book.create!(title: 'The Alchemist', author: 'Paulo Coelo', fiction: true, number_of_copies: 4, library: library_2) }
 let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', fiction: true, number_of_copies: 0, library: library_1) }
-  it 'links to edit page' do
+  it 'links to edit library show page' do
     visit "/libraries/#{library_1.id}"
 
-    click_link("Edit #{library_1.name}")
+    click_button("Edit Library")
 
     expect(current_path).to eq("/libraries/#{library_1.id}/edit")
   end
 
-  it 'can edit the library' do
+  it 'can edit the library on show page' do
     visit "/libraries/#{library_1.id}/edit"
 
     fill_in 'Name', with: 'Denver Public Library'
@@ -36,19 +36,19 @@ let!(:book_4) { Book.create!(title: 'Milk and Honey', author: 'Rupi Kaur', ficti
     expect(page).to have_content('Denver Public Library')    
   end
 
-  it 'links to edit page' do
+  it 'links to edit library index page' do
     visit "/libraries"
 
-    click_link("Edit #{library_1.name}")
+    click_button("Edit #{library_1.name}")
 
     expect(current_path).to eq("/libraries/#{library_1.id}/edit")
   end
 
-  it 'can edit the library' do
+  it 'can edit the library book index page' do
     visit "/libraries/#{library_1.id}/edit"
 
     fill_in 'Name', with: 'Denver Public Library'
-    click_button('Update Library')
+    click_button("Update Library")
 
     expect(current_path).to eq("/libraries/#{library_1.id}")
     expect(page).to have_content('Denver Public Library')    
