@@ -1,7 +1,7 @@
 class Libraries::BooksController < ApplicationController
   def index
     @library = Library.find(params[:id])
-    @books = @library.books
+    @books = @library.sort_by_name(params[:sort])
   end
 
   def new

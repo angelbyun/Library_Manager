@@ -9,4 +9,12 @@ class Library < ApplicationRecord
   def book_count
     self.books.count
   end
+
+  def sort_by_name(sort)
+    if sort == "alpha"
+      self.books.order(title: :asc)
+    else
+      self.books
+    end
+  end
 end

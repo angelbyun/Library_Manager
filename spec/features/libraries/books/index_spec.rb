@@ -22,5 +22,14 @@ RSpec.describe '/libraries/:library_id/books', type: :feature do
 
       expect(page).to have_content("Total Books at Denver Public Library: 2")
     end
+
+    it 'can sort alphabetically by title' do
+      visit "/libraries/#{library_1.id}/books"
+
+      click_on 'Sort Alphabetically'
+
+      expect(current_path).to eq("/libraries/#{library_1.id}/books")
+      expect(book_4.title).to appear_before(book_2.title)
+    end
   end
 end
